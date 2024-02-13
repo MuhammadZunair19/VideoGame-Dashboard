@@ -5,10 +5,17 @@ import GameGrid from "./components/GameGrid";
 
 function App() {
   return (
-    <Grid templateAreas={{
-      base: `"nav" "main"`,
-      lg: `"nav nav" "aside main"`
-    }}>
+    <Grid
+      templateAreas={{
+        base: `"nav" "main"`,
+        lg: `"nav nav" "aside main"`
+      }}
+      templateColumns={{
+        base: '1fr',
+        lg: '200px 1fr'
+
+      }}
+    >
       <GridItem
         area="nav" >
         <NavBar />
@@ -16,7 +23,7 @@ function App() {
 
       <Show above="lg">
         <GridItem
-          area="aside" >
+          area="aside" paddingX={5}>
           <GenreList />
         </GridItem>
       </Show>
